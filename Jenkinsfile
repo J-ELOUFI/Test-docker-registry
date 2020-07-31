@@ -11,7 +11,7 @@ node {
         /* This builds the actual image */
 
         app = docker.build("test-docker/nodeapp")
-	app.docker login docker.io
+	app.docker login docker.io jeloufi:Jamal4063
     }
 
     stage('Test image') {

@@ -1,6 +1,6 @@
 node {
     def app
-    
+
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
@@ -26,7 +26,7 @@ node {
 			You would need to first register with DockerHub before you can push images to your account
 		*/
        
-	docker.withRegistry("192.168.10.84:5000") {
+	docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
 
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")

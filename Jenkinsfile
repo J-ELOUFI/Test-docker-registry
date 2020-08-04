@@ -1,8 +1,6 @@
 node {
     def app
-     environment {
-        DOCKER_HOST="tcp://192.168.10.84:5000"
-     }
+    
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
@@ -28,7 +26,7 @@ node {
 			You would need to first register with DockerHub before you can push images to your account
 		*/
        
-	docker.withRegistry('root/workspace/docker-registry/volume/docker/registry/v2/repositories', 'none') {
+	docker.withRegistry("192.168.10.84:5000) {
 
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")

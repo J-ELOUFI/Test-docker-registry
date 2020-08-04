@@ -1,6 +1,8 @@
 node {
     def app
-
+     environment {
+        DOCKER_HOST="tcp://192.168.10.84:5000"
+     }
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
